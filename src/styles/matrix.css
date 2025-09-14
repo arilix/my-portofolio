@@ -43,3 +43,151 @@
         opacity: 0;
     }
 }
+
+/* Simple fade-in */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-fade-in { animation: fade-in .7s ease both; }
+
+/* Subtle float animations for ambient glows */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float 10s ease-in-out infinite; }
+
+/* Intro reveal animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up { animation: fade-in-up .7s cubic-bezier(.22,.61,.36,1) both; }
+.animate-fade-in-down { animation: fade-in-down .7s cubic-bezier(.22,.61,.36,1) both; }
+
+/* Simple delay helpers for animations */
+.anim-delay-1 { animation-delay: .15s; }
+.anim-delay-2 { animation-delay: .3s; }
+.anim-delay-3 { animation-delay: .45s; }
+
+/* Stagger children utility */
+.stagger-chips > * { opacity: 0; animation: fade-in-up .5s ease-out both; }
+.stagger-chips > *:nth-child(1) { animation-delay: .2s; }
+.stagger-chips > *:nth-child(2) { animation-delay: .3s; }
+.stagger-chips > *:nth-child(3) { animation-delay: .4s; }
+.stagger-chips > *:nth-child(4) { animation-delay: .5s; }
+.stagger-chips > *:nth-child(5) { animation-delay: .6s; }
+
+/* Cinematic glow text */
+.glow-text {
+  text-shadow: 0 0 8px rgba(16,185,129,.45), 0 0 22px rgba(16,185,129,.25);
+}
+
+.glow-text-sm {
+  text-shadow: 0 0 6px rgba(16,185,129,.35), 0 0 16px rgba(16,185,129,.2);
+}
+
+/* Soft link styling used in social */
+.link-soft { color: rgba(110,231,183,.9); transition: color .2s ease, text-shadow .2s ease; }
+.link-soft:hover { color: rgb(167,243,208); text-shadow: 0 0 10px rgba(16,185,129,.35); }
+
+/* Glassmorphism blocks and neon borders */
+.glass { background: rgba(2, 20, 8, .45); backdrop-filter: blur(8px); }
+.neon-border { box-shadow: inset 0 0 0 1px rgba(16,185,129,.25), 0 0 24px rgba(16,185,129,.12); }
+
+/* Section title subtle reveal */
+@keyframes width-reveal { from { transform: scaleX(0); opacity: .6; } to { transform: scaleX(1); opacity: 1; } }
+.section-title { display: inline-block; position: relative; text-shadow: 0 0 8px rgba(16,185,129,.25); animation: fade-in-up .6s ease-out both; }
+.section-title::after {
+  content: "";
+  display: block;
+  height: 2px;
+  margin-top: .5rem;
+  background: linear-gradient(90deg, rgba(16,185,129,.9), rgba(16,185,129,.0));
+  transform-origin: left center;
+  animation: width-reveal .7s ease-out both;
+}
+
+/* Name split animation: left/right to center */
+@keyframes slide-in-left { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slide-in-right { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
+.animate-slide-in-left { animation: slide-in-left .7s cubic-bezier(.22,.61,.36,1) both; }
+.animate-slide-in-right { animation: slide-in-right .7s cubic-bezier(.22,.61,.36,1) both; }
+/* Slow-motion variants for hero name */
+.animate-slide-in-left-slow { animation: slide-in-left 2.8s cubic-bezier(.22,.61,.36,1) both; }
+.animate-slide-in-right-slow { animation: slide-in-right 2.8s cubic-bezier(.22,.61,.36,1) both; }
+
+/* Chip cycle: enter, hold, exit to right */
+@keyframes chip-inout-right {
+  0% { transform: translateX(-20px); opacity: 0; }
+  20% { transform: translateX(0); opacity: 1; }
+  80% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(40px); opacity: 0; }
+}
+.chip-run { animation: chip-inout-right 2.8s ease-in-out both; animation-delay: var(--delay, 0s); }
+.anim-loop-1 { --delay: .0s; }
+.anim-loop-2 { --delay: .2s; }
+.anim-loop-3 { --delay: .4s; }
+.anim-loop-4 { --delay: .6s; }
+
+/* Reveal-up for blocks */
+.reveal-up { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+.reveal-up.in { opacity: 1; transform: translateY(0); }
+
+/* Cinematic enhancements */
+.glass {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(16, 185, 129, 0.35); /* emerald-500 */
+    backdrop-filter: blur(10px);
+}
+
+.neon-border {
+    box-shadow:
+      0 0 0 1px rgba(16, 185, 129, 0.35),
+      0 10px 30px rgba(16, 185, 129, 0.12),
+      inset 0 0 30px rgba(16, 185, 129, 0.08);
+}
+
+.glow-text {
+    text-shadow: 0 0 32px rgba(16, 185, 129, 0.35), 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.glow-text-sm {
+    text-shadow: 0 0 16px rgba(16, 185, 129, 0.3);
+}
+
+.section-title {
+    margin-bottom: 1.25rem; /* mb-5 */
+    font-weight: 700;
+    font-size: 1.5rem; /* text-2xl */
+}
+
+.link-soft {
+    transition: color 200ms ease, text-shadow 200ms ease;
+}
+
+.link-soft:hover {
+    color: rgb(134 239 172 / 1); /* emerald-300 */
+    text-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+}
+
+@keyframes floaty {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(0, -10px, 0) scale(1.02); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.animate-float {
+    animation: floaty 8s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: floaty 12s ease-in-out infinite;
+}
