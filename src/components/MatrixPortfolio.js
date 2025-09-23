@@ -330,9 +330,9 @@ const MatrixPortfolio = () => {
             <div className="glass neon-border rounded-xl p-6 md:p-8 h-full hover:translate-y-0.5 transition-all duration-300 reveal-up">
               <h2 className="text-2xl font-bold mb-4">About Me</h2>
               <p className="text-emerald-200/90 leading-relaxed">
-               Saya seorang developer yang fokus pada Machine Learning, Computer Vision, dan Robotika.
-Saya membangun sistem cerdas end-to-end: mulai dari data pipeline, training model, hingga deployment terukur dengan cloud/docker.
-Rasa ingin tahu dan perhatian pada detail mendorong saya menciptakan solusi yang tidak hanya berfungsi, tapi juga elegan dan berdampak.
+               Saya seorang developer dengan minat di Machine Learning, Computer Vision, dan Robotika.
+Berpengalaman membangun sistem dari tahap pengolahan data, pelatihan model, hingga deployment di cloud/docker.
+Saya senang mengutak-atik detail dan mencari solusi yang benar-benar berguna, bukan sekadar jalan.
               </p>
             </div>
           </div>
